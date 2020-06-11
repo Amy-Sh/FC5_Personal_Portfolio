@@ -1,0 +1,18 @@
+/*reset css*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*set colors*/
+
+:root {
+    --color-pink: #FFD0CB;
+    --color-white: #FFFFFF;
+    --color-black: #37384C;
+    --color-skyblue: #0EC6DC;
+    --color-blue: #406DDB;
+}
