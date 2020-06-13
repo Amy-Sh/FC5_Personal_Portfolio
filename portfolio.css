@@ -1,9 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap');
+
 /*reset css*/
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* Set font size for easy rem calculations
+   * default document font size = 16px
+   * 16px:100% = 10px:62.5%  1rem=10px=62.5%
+  */
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 
@@ -13,6 +34,166 @@
     --color-pink: #FFD0CB;
     --color-white: #FFFFFF;
     --color-black: #37384C;
-    --color-skyblue: #0EC6DC;
+    --color-skyblue: rgba(14, 199, 220, 0.3);
     --color-blue: #406DDB;
+}
+
+
+/*set fonts*/
+
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 6rem;
+    color: var(--color-blue);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+}
+
+h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4rem;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3.5rem;
+    color: var(--color-blue);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2rem;
+    background-color: var(--color-pink);
+}
+
+
+/*nav bar*/
+
+#navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+#navbar ul {
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar li {
+    margin: 2rem;
+}
+
+#navbar a {
+    color: var(--color-blue);
+}
+
+#navbar a:hover {
+    color: var(--color-white);
+    transition: .3s;
+}
+
+
+/*welcome section*/
+
+#welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/*projects*/
+
+#projects {
+    background-color: var(--color-skyblue);
+}
+
+#projects h2 {
+    text-align: center;
+    padding: 5rem 0 3rem 0;
+    color: var(--color-white);
+    text-shadow: 1px 1px 0 var(--color-black), -1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black), 1px -1px 0 var(--color-black), 0px 1px 0 var(--color-black), 0-1px 0 var(--color-black), -1px 0 0 var(--color-black), 1px 0 0 var(--color-black);
+}
+
+.projets-grid {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 4rem;
+    grid-template-areas: "tb sf" "pl td";
+    padding-bottom: 5rem;
+}
+
+.tb {
+    grid-area: tb;
+}
+
+.sf {
+    grid-area: sf;
+}
+
+.pl {
+    grid-area: pl;
+}
+
+.td {
+    grid-area: td;
+}
+
+img {
+    height: 30rem;
+    width: 45rem;
+    transition: all 1s;
+}
+
+img:hover {
+    transform: scale(1.5);
+}
+
+
+/*contacts*/
+
+#contacts {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-black);
+}
+
+.contact-links {
+    margin-top: 2rem;
+}
+
+.contact-links a {
+    padding: 2rem;
+    color: var(--color-white);
+    text-shadow: 1px 1px 0 var(--color-black), -1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black), 1px -1px 0 var(--color-black), 0px 1px 0 var(--color-black), 0-1px 0 var(--color-black), -1px 0 0 var(--color-black), 1px 0 0 var(--color-black);
+}
+
+
+/*footer*/
+
+footer {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    text-align: center;
+    font-size: 1.5rem;
+    padding: .8rem 0 .8rem 0;
 }
