@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 /*reset css*/
 
@@ -162,7 +162,7 @@ img {
     overflow: hidden;
 }
 
-.project-name {
+.project-tile {
     position: absolute;
     top: 0;
     left: 0;
@@ -177,7 +177,7 @@ img {
     align-items: center;
 }
 
-.project:hover .project-name {
+.project:hover .project-tile {
     opacity: 1;
     transition: all .2s ease-in;
 }
@@ -241,7 +241,7 @@ footer {
         width: 54rem;
         height: 36rem;
     }
-    .project-name {
+    .project-tile {
         width: 54rem;
         height: 36rem;
     }
@@ -258,7 +258,7 @@ footer {
         width: 42rem;
         height: 28rem;
     }
-    .project-name {
+    .project-tile {
         width: 42rem;
         height: 28rem;
     }
