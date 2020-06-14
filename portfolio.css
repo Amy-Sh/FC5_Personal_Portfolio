@@ -23,6 +23,7 @@ li {
   */
 
 html {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
@@ -42,7 +43,6 @@ html {
 /*set fonts*/
 
 h1 {
-    font-family: 'Ubuntu', sans-serif;
     font-size: 6rem;
     color: var(--color-blue);
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
@@ -52,18 +52,15 @@ h1 {
 }
 
 h2 {
-    font-family: 'Ubuntu', sans-serif;
     font-size: 4rem;
 }
 
 p {
-    font-family: 'Ubuntu', sans-serif;
     font-size: 3.5rem;
     color: var(--color-blue);
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     font-size: 2.2rem;
     background-color: var(--color-pink);
 }
@@ -122,7 +119,7 @@ body {
 
 #projects h2 {
     text-align: center;
-    padding: 5rem 0 3rem 0;
+    padding: 5rem 0;
     color: var(--color-white);
     text-shadow: 1px 1px 0 var(--color-black), -1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black), 1px -1px 0 var(--color-black), 0px 1px 0 var(--color-black), 0-1px 0 var(--color-black), -1px 0 0 var(--color-black), 1px 0 0 var(--color-black);
 }
@@ -155,13 +152,34 @@ body {
 }
 
 img {
-    height: 30rem;
-    width: 45rem;
+    width: 48rem;
+    height: 32rem;
     transition: all 1s;
 }
 
-img:hover {
-    transform: scale(1.5);
+.project {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48rem;
+    height: 32rem;
+    color: var(--color-white);
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, .65);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project:hover .project-name {
+    opacity: 1;
+    transition: all .2s ease-in;
 }
 
 
@@ -187,6 +205,11 @@ img:hover {
     text-shadow: 1px 1px 0 var(--color-black), -1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black), 1px -1px 0 var(--color-black), 0px 1px 0 var(--color-black), 0-1px 0 var(--color-black), -1px 0 0 var(--color-black), 1px 0 0 var(--color-black);
 }
 
+.contact-links a:hover {
+    transition: all .3s;
+    text-shadow: none;
+}
+
 
 /*footer*/
 
@@ -196,4 +219,47 @@ footer {
     text-align: center;
     font-size: 1.5rem;
     padding: .8rem 0 .8rem 0;
+}
+
+
+/*tablet*/
+
+@media (max-width:1100px) {
+    html {
+        font-size: 55%;
+    }
+    .projets-grid {
+        width: 100vw;
+        margin: 0;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "tb" "sf" "pl" "td";
+        grid-gap: 4rem;
+    }
+    img {
+        width: 54rem;
+        height: 36rem;
+    }
+    .project-name {
+        width: 54rem;
+        height: 36rem;
+    }
+}
+
+
+/*mobile*/
+
+@media (max-width:600px) {
+    html {
+        font-size: 52%;
+    }
+    img {
+        width: 42rem;
+        height: 28rem;
+    }
+    .project-name {
+        width: 42rem;
+        height: 28rem;
+    }
 }
